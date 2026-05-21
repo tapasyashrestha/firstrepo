@@ -1,0 +1,15 @@
+.container{
+    background-color: aqua;
+    width:1134px;
+    height:166px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.box1{
+    background-color: blueviolet;
+    width:150px;
+    height:120px;
+}
