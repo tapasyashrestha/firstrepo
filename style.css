@@ -1,20 +1,22 @@
 :root {
-  --red:        #E50914;
-  --red-dark:   #b20710;
-  --black:      #000000;
-  --dark:       #141414;
-  --dark2:      #1a1a1a;
-  --dark3:      #232323;
-  --white:      #ffffff;
-  --grey:       #808080;
+  --red: #E50914;
+  --red-dark: #b20710;
+  --black: #000000;
+  --dark: #141414;
+  --dark2: #1a1a1a;
+  --dark3: #232323;
+  --white: #ffffff;
+  --grey: #808080;
   --grey-light: #d2d2d2;
-  --border:     rgba(255, 255, 255, 0.15);
-  --radius:     8px;
-  --trans:      0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --border: rgba(255, 255, 255, 0.15);
+  --radius: 8px;
+  --trans: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ---------- RESET & BASE ---------- */
-*, *::before, *::after {
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -39,16 +41,18 @@ a {
   transition: color var(--trans);
 }
 
-/* ---------- NAVBAR ---------- */
+
 .navbar {
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 28px 60px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, transparent 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
 }
 
 .logo-svg {
@@ -113,7 +117,7 @@ a {
   transform: translateY(1px) scale(0.97);
 }
 
-/* ---------- HERO ---------- */
+
 .hero {
   position: relative;
   min-height: 100vh;
@@ -125,7 +129,6 @@ a {
   padding: 120px 24px 80px;
 }
 
-/* Smooth drifting collage background image */
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -135,8 +138,13 @@ a {
 }
 
 @keyframes bgZoom {
-  0% { transform: scale(1.05); }
-  100% { transform: scale(1.15); }
+  0% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1.15);
+  }
 }
 
 .poster-grid {
@@ -147,27 +155,30 @@ a {
   position: absolute;
   width: 24px;
   height: 100%;
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent 20px,
-    rgba(255,255,255,0.03) 20px,
-    rgba(255,255,255,0.03) 36px
-  );
+  background: repeating-linear-gradient(to bottom,
+      transparent 0,
+      transparent 20px,
+      rgba(255, 255, 255, 0.03) 20px,
+      rgba(255, 255, 255, 0.03) 36px);
   top: 0;
   opacity: 0.3;
   pointer-events: none;
 }
 
-.film-strip-1 { left: 5%; }
-.film-strip-2 { right: 5%; }
+.film-strip-1 {
+  left: 5%;
+}
+
+.film-strip-2 {
+  right: 5%;
+}
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 60%),
-    linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0.95) 100%);
+    radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 60%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.45) 40%, rgba(0, 0, 0, 0.95) 100%);
   z-index: 1;
 }
 
@@ -180,8 +191,15 @@ a {
 }
 
 @keyframes heroReveal {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-title {
@@ -198,7 +216,7 @@ a {
   font-size: clamp(18px, 2.5vw, 24px);
   font-weight: 500;
   margin-bottom: 24px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .hero-cta-text {
@@ -207,7 +225,7 @@ a {
   margin-bottom: 20px;
 }
 
-/* ---------- EMAIL FORM (floating labels & interactive outline) ---------- */
+
 .email-form {
   display: flex;
   flex-wrap: wrap;
@@ -254,8 +272,8 @@ a {
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.email-input:focus ~ .floating-label,
-.email-input:not(:placeholder-shown) ~ .floating-label {
+.email-input:focus~.floating-label,
+.email-input:not(:placeholder-shown)~.floating-label {
   top: 10px;
   transform: none;
   font-size: 12px;
@@ -301,13 +319,11 @@ a {
   transform: translateY(1px);
 }
 
-/* ---------- DIVIDER ---------- */
 .section-divider {
   height: 8px;
   background: #232323;
 }
 
-/* ---------- FEATURE SECTIONS ---------- */
 .feature {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -322,7 +338,7 @@ a {
   direction: rtl;
 }
 
-.feature-reverse > * {
+.feature-reverse>* {
   direction: ltr;
 }
 
@@ -348,7 +364,6 @@ a {
   position: relative;
 }
 
-/* --- TV Animation --- */
 .tv-frame {
   position: relative;
   display: flex;
@@ -365,7 +380,7 @@ a {
   display: flex;
   align-items: flex-end;
   padding: 16px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5), inset 0 0 40px rgba(0,0,0,0.9);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(0, 0, 0, 0.9);
   position: relative;
   overflow: hidden;
 }
@@ -374,9 +389,7 @@ a {
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    0deg, transparent, transparent 1px, rgba(255,255,255,0.01) 1px, rgba(255,255,255,0.01) 2px
-  );
+  background: repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255, 255, 255, 0.01) 1px, rgba(255, 255, 255, 0.01) 2px);
   pointer-events: none;
 }
 
@@ -390,7 +403,7 @@ a {
   letter-spacing: 1px;
   margin-bottom: 6px;
   color: var(--white);
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .tv-bar {
@@ -408,9 +421,17 @@ a {
 }
 
 @keyframes tvLoading {
-  0% { width: 30%; }
-  50% { width: 85%; }
-  100% { width: 45%; }
+  0% {
+    width: 30%;
+  }
+
+  50% {
+    width: 85%;
+  }
+
+  100% {
+    width: 45%;
+  }
 }
 
 .tv-stand {
@@ -437,16 +458,22 @@ a {
   padding: 6px 14px;
   font-size: 13px;
   font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   animation: badgePulse 2s infinite alternate;
 }
 
 @keyframes badgePulse {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.3); }
-  100% { transform: scale(1.03); box-shadow: 0 0 10px 4px rgba(229, 9, 20, 0.1); }
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.3);
+  }
+
+  100% {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px 4px rgba(229, 9, 20, 0.1);
+  }
 }
 
-/* --- Phone & Downloading Mockup --- */
 .phone-frame {
   width: 190px;
   height: 330px;
@@ -457,7 +484,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
   position: relative;
   transition: transform var(--trans);
 }
@@ -500,7 +527,7 @@ a {
   align-items: center;
   gap: 10px;
   background: #222;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 10px;
   transition: background-color var(--trans);
@@ -517,8 +544,13 @@ a {
 }
 
 @keyframes dlArrow {
-  from { transform: translateY(-2px); }
-  to { transform: translateY(2px); }
+  from {
+    transform: translateY(-2px);
+  }
+
+  to {
+    transform: translateY(2px);
+  }
 }
 
 .download-pill span:not(.dl-icon) {
@@ -530,14 +562,16 @@ a {
 .dl-progress {
   width: 16px;
   height: 16px;
-  border: 2px solid rgba(255,255,255,0.1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   border-top-color: #1e90ff;
   border-radius: 50%;
   animation: dlSpin 1s linear infinite;
 }
 
 @keyframes dlSpin {
-  100% { transform: rotate(360deg); }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* --- Multi Devices Mockup --- */
@@ -557,7 +591,7 @@ a {
 
 .device:hover {
   transform: translateY(-3px);
-  border-color: rgba(255,255,255,0.3);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .device-screen {
@@ -579,7 +613,9 @@ a {
 .device-laptop::after {
   content: '';
   position: absolute;
-  bottom: -8px; left: -10px; right: -10px;
+  bottom: -8px;
+  left: -10px;
+  right: -10px;
   height: 8px;
   background: #333;
   border-radius: 0 0 6px 6px;
@@ -601,7 +637,6 @@ a {
   opacity: 0.6;
 }
 
-/* --- Kids Icons Grid --- */
 .kids-icons {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -628,7 +663,6 @@ a {
   box-shadow: 0 8px 24px rgba(229, 9, 20, 0.3);
 }
 
-/* ---------- FAQ ACCORDION (details & summary integration) ---------- */
 .faq-section {
   padding: 80px 10%;
   background: var(--black);
@@ -705,8 +739,15 @@ a {
 }
 
 @keyframes faqOpen {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .faq-bottom-cta {
@@ -720,7 +761,7 @@ a {
   margin-bottom: 20px;
 }
 
-/* ---------- FOOTER ---------- */
+
 .footer {
   background: var(--black);
   padding: 72px 10%;
@@ -764,16 +805,15 @@ a {
   font-size: 12px;
 }
 
-/* ---------- RESPONSIVENESS ---------- */
 @media (max-width: 900px) {
   .navbar {
     padding: 20px 32px;
   }
-  
+
   .logo-svg {
     width: 112px;
   }
-  
+
   .feature {
     grid-template-columns: 1fr;
     text-align: center;
@@ -784,7 +824,7 @@ a {
   .feature-reverse {
     direction: ltr;
   }
-  
+
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -817,35 +857,37 @@ a {
     font-size: 20px;
     padding: 0 24px;
   }
-  
+
   .tv-screen {
     width: 260px;
     height: 160px;
   }
-  
+
   .popcorn-badge {
     right: 4%;
   }
-  
+
   .devices {
     gap: 10px;
   }
-  
+
   .device-laptop {
     width: 130px;
     height: 85px;
   }
-  
+
   .device-laptop::after {
-    bottom: -6px; left: -6px; right: -6px;
+    bottom: -6px;
+    left: -6px;
+    right: -6px;
     height: 6px;
   }
-  
+
   .device-tablet {
     width: 70px;
     height: 95px;
   }
-  
+
   .device-phone-sm {
     width: 38px;
     height: 65px;
